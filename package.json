@@ -1,0 +1,31 @@
+{
+  "name": "tanstack-rsbuild-css-repro",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "rsbuild dev --port 4317",
+    "build": "rsbuild build",
+    "start": "node server.mjs",
+    "test": "node --test tests/manifest.test.mjs",
+    "test:e2e": "playwright test",
+    "repro": "pnpm build && pnpm test:e2e",
+    "verify:repro": "node scripts/verify-repro.mjs"
+  },
+  "dependencies": {
+    "@tanstack/react-router": "1.170.15",
+    "@tanstack/react-start": "1.168.25",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "@rsbuild/core": "2.1.11",
+    "@rsbuild/plugin-react": "2.0.1",
+    "@tanstack/start-plugin-core": "1.171.17",
+    "typescript": "5.9.3"
+  }
+}
